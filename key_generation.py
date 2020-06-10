@@ -29,5 +29,5 @@ def generate_key():
 	d = cryptomath.findModInverse(e,phi_n)
 	public_key = (n,e)
 	private_key = (n,d)
-	print ('FOR CURRENT RUN: \n', 'Public key : ',public_key,'\t Private key : ',private_key)
+	
 	return (public_key,private_key)

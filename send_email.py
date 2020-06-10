@@ -4,13 +4,9 @@ import hashlib
 import key_generation
 import sys
 import camellia
-import json
-import Login_user
 def main():
-    print(1)
 	# Generate the keys from key_generation
 	pu, pr = key_generation.generate_key()
-	print(pu)
 	ch = 0
 	while(ch != 3):
 		print('Welcome to RSA Approach of DSS\n')
@@ -40,14 +36,6 @@ def main():
 			else:
 				print('Sorry, the digital signature could not be verified...')
 		elif(ch == 3):
-			sys.exit('Exiting.... \n')
-		elif(ch == 4):
-			plain ="vladi vladi 12345 vladi vladi 12345"
-			c1 = camellia.CamelliaCipher(key=b'15 byte long key', IV=b'16 byte iv. abcd', mode=camellia.MODE_CBC)
-			encrypted = c1.encrypt(plain)
-			c2 = camellia.CamelliaCipher(key=b'15 byte long key', IV=b'16 byte iv. abcd', mode=camellia.MODE_CBC)
-			decrypted = c2.decrypt(encrypted)
-			print(encrypted)
-			print(decrypted)		
+			sys.exit('Exiting.... \n')		
 if __name__ == '__main__':
 	main()
