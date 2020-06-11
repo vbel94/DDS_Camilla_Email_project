@@ -5,49 +5,48 @@ import key_generation
 import sys
 import camellia
 import json
-import Login_user
+import Data_Controller
+import os
+import Mail_Read
 def main():
-    print(1)
-	# Generate the keys from key_generation
-	pu, pr = key_generation.generate_key()
-	print(pu)
+	clear = lambda: os.system('clear')
 	ch = 0
-	while(ch != 3):
-		print('Welcome to RSA Approach of DSS\n')
-		print('1. Send message\n')
-		print('2. Receive and verify the digital signature \n')
-		print('3. Exit')
-		ch = int(input('Please choose one: '))
-		if(ch == 1):
-			m = input('Enter plain text : ')
-			h1 = hashlib.sha224(m.encode('utf-8'))
-			print('Applying SHA224 on plain text : ' + h1.hexdigest() + '\n')
-			ct = RSA_Encryption.encrypt(h1.hexdigest(), pu)
-			print('The enciphered hash is : ', ct)
-			final_message = m + '#' + ct
-			print('The final message being sent over is : ', final_message)
-		elif(ch == 2):
-			m2 = input('Enter the received message : ')
-			# m2 = final_message.split('#')
-			print(m2[0], '\n', m2[1])
-			pt = RSA_Decryption.decrypt(m2[1], pr)
-			print('Decryption on the hash is : ', pt)
-			h2 = hashlib.sha224(m2[0].encode('utf-8'))
-			print('SHA224 on the message received in plaintext : ' +
-				  h2.hexdigest() + '\n')
-			if (pt == h2.hexdigest()):
-				print('The digital signature has been verified!!')
-			else:
-				print('Sorry, the digital signature could not be verified...')
-		elif(ch == 3):
-			sys.exit('Exiting.... \n')
-		elif(ch == 4):
-			plain ="vladi vladi 12345 vladi vladi 12345"
-			c1 = camellia.CamelliaCipher(key=b'15 byte long key', IV=b'16 byte iv. abcd', mode=camellia.MODE_CBC)
-			encrypted = c1.encrypt(plain)
-			c2 = camellia.CamelliaCipher(key=b'15 byte long key', IV=b'16 byte iv. abcd', mode=camellia.MODE_CBC)
-			decrypted = c2.decrypt(encrypted)
-			print(encrypted)
-			print(decrypted)		
+	current_user = None
+	while(1):
+		clear()
+		if(current_user==None):
+			print('Welcome to Email that spourt DSS and camiila\n')
+			print('1. login\n')
+			print('2. Exit')
+			ch = int(input('Please choose one: '))
+			if(ch == 1):
+				while(1):
+					email=raw_input("Enter your Email account : ")
+					password = raw_input("Enter your Email password : ")
+					current_user = Data_Controller.login(email, password)
+					if (current_user != None):
+						break
+					else:
+						print("no user like that")
+			elif (ch == 3):
+				print(1)
+			elif(ch == 2):
+				sys.exit('Exiting.... \n')
+		else:
+			print('hey'+current_user["email"])
+			print('1. read mails\n')
+			print('1. write mail\n')
+			print('3. back to login')
+			ch = int(input('Please choose one: '))
+			if(ch == 1):
+				print("read mails")
+				Mail_Read.Mailread(current_user["email"])
+				input('Please Enter to continue: ')
+			if(ch == 2):
+				print("write mail")
+				#writemail()
+			elif(ch==3):
+				clear()
+				current_user=None
 if __name__ == '__main__':
-	main()
+    	main()
