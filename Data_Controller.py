@@ -13,9 +13,8 @@ def getmails(email):
   for d in data['data']:
     if(d["email"]==email):
      return d["email_received"]
-    else:
-     return None
-def sentmails(email_sender,email_receiver,key,mail_txt,iv):
+  return None
+def sentmails(email_sender,email_receiver,mail_txt,iv):
   with open('./data.json') as json_file:
     data = json.load(json_file)
     for d in data['data']:
@@ -23,7 +22,6 @@ def sentmails(email_sender,email_receiver,key,mail_txt,iv):
         
         d["email_received"].append({
          "mail_txt":mail_txt,
-         "key":key,
          "from":email_sender,
          "iv":iv
          })

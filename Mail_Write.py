@@ -24,8 +24,7 @@ def Mail_Write(sourceMail):
     plain=camellia_tool.encrypt(str(plain),16,Key,IV)
     public_key=Data_Controller.GetPublicKey(Email)
     plain=dds_tools.encrypt_dds(public_key,plain)
-    print(plain)
-    Data_Controller.sentmails(sourceMail,Email,Key,plain,IV)#(email_sender,email_receiver,key,mail_txt,iv):
+    Data_Controller.sentmails(sourceMail,Email,plain,IV)#(email_sender,email_receiver,key,mail_txt,iv):
 
 
     
@@ -36,4 +35,3 @@ def Mail_Write(sourceMail):
     
     #Mail_Write(plain)
    
-Mail_Write("vladi")

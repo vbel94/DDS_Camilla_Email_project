@@ -29,7 +29,6 @@ def main():
 			elif(ch == 2):
 				sys.exit('Exiting.... \n')
 		else:
-		
 			print('hey '+current_user["email"])
 			print('1. read mails\n')
 			print('2. write mail\n')
