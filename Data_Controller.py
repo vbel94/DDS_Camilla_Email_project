@@ -1,4 +1,5 @@
 import json
+
 def login(email,password):
   with open('./data.json') as json_file:
     data = json.load(json_file)
@@ -14,7 +15,7 @@ def getmails(email):
      return d["email_received"]
     else:
      return None
-def sentmails(email_sender,email_receiver,key,mail_txt):
+def sentmails(email_sender,email_receiver,key,mail_txt,iv):
   with open('./data.json') as json_file:
     data = json.load(json_file)
     for d in data['data']:
@@ -23,11 +24,31 @@ def sentmails(email_sender,email_receiver,key,mail_txt):
         d["email_received"].append({
          "mail_txt":mail_txt,
          "key":key,
-         "from":email_sender
+         "from":email_sender,
+         "iv":iv
          })
         with open("./data.json", 'w') as fp:
           json.dump(data, fp)
 #mails=getmails("vladi")
+def MailExist(email):
+  with open('./data.json') as json_file:
+    data = json.load(json_file)
+  for d in data['data']:
+    if(d["email"]==email):
+     return True
+  return False
 
-
-
+def GetPublicKey(email):
+  with open('./data.json') as json_file:
+    data = json.load(json_file)
+  for d in data['data']:
+    if(d["email"]==email):
+     return tuple(map(int, d["public_key"].split(', ')))
+  return None
+def GetPrivateKey(email):
+  with open('./data.json') as json_file:
+    data = json.load(json_file)
+  for d in data['data']:
+    if(d["email"]==email):
+      return tuple(map(int, d["private_key"].split(', ')))
+  return False
