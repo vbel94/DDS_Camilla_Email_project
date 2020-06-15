@@ -21,7 +21,7 @@ def sentmails(email_sender,email_receiver,key,mail_txt):
       if(d["email"]==email_receiver):
         
         d["email_received"].append({
-         "mail_txt":[mail_txt],
+         "mail_txt":mail_txt,
          "key":key,
          "from":email_sender
          })
