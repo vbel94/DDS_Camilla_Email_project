@@ -1,1 +1,21 @@
-{"data": [{"public_key": "24503, 241", "private_key": "24503, 20257", "email_received": [], "id": 1, "password": "vladi", "email": "vladi"}, {"public_key": "12599, 227", "private_key": "12599, 10211", "email_received": [{"mail_txt": "OpJ\u0087}\u00f8y\u00d5\u001dGj\u001d\u00a4\u00f1+\"\ny\u00d19G\u008a\u0086\u00fb\u00f5\u00fah\u00f3\u00cee%\u00ef\u00dc\n\u00ff!\u009aR[\u001b\u00f0\f\u00eb4\u008e\u00b1\u008c\u00bf\u00bd\u00b4\n&\u1169\u03d1\u22e3\u28cc\u2b24\u1169\u02d9\u2b24\u0a9e\u0f92\u212f\u0311\u23b4\u2821\u03d1\u0a9e\u05db\u2b24\u0a9e\u2b24\u22e3\u2b24\u2b24\u0311\u22e3\u212f\u22e3\u02d9\u0f92\u28cc\u2b24\u2b24\u212f\u02d9\u0f92\u3033\u0311\u0f92\u2b24\u055d\u055d\u3033\u22e3\u2b24\u1169\u055d\u1169\u2821\u02d9\u0f92\u0403\u0403\u03d1\u28cc\u0f92\u0311", "from": "vladi", "iv": "Sr*$DWQ?;U{DX!6s"}], "id": 2, "password": "vladi2", "email": "vladi2"}]}
+{
+  "data": [
+    {
+      "public_key": "24503, 241",
+      "private_key": "24503, 20257",
+      "email_received": [],
+      "id": 1,
+      "password": "vladi",
+      "email": "vladi"
+    },
+    {
+      "public_key": "12599, 227",
+      "private_key": "12599, 10211",
+      "email_received": [
+      ],
+      "id": 2,
+      "password": "vladi2",
+      "email": "vladi2"
+    }
+  ]
+}
