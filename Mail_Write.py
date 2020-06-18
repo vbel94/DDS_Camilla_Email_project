@@ -4,26 +4,34 @@ import sys
 import Data_Controller
 import camellia_tool
 import String_Generation
-import dds_tools
+import dss_tools
 def Mail_Write(sourceMail):
     while(True):
-     Email=input("Enter Email account that you want sent a e-mail: \n")
+     print('--------------------WRITE MAIL--------------------')
+     Email=input("Enter the e-mail of the receiver: ")
      if(Data_Controller.MailExist(Email)==True):  
         break
      else:
-         print("Mail dont Exist\n")
-    plain=input("Enter Text you want to sent \n")
+         print("ERROR - THE MAIL OF THE RECEIVER DOES NOT EXIST!")
+         print('--------------------------------------------------\n')
+    plain=input("Enter the message you want to sent: ")
+    print('--------------------------------------------------\n')
+    print('~THE MESSAGE WAS CREATED~\n')
     while True:
-        Key=input("Enter Key 16,32 Byte\n")
-        if(len(Key)==16 or len(Key)==32):
+        print('------------------MAIL DECRYPTION-----------------')
+        Key=input("Enter a Key to decrypt the message with (16/24/32 Bytes): ")
+        if(len(Key)==16 or len(Key)==24 or len(Key)==32):
+            print('--------------------------------------------------\n')
+            print('~THE MESSAGE WAS SENT~')
             break
-        else:
-         print("Key must be 16,or 32 Byte Try agin\n")
+        else: 
+         print("ERROR - THE KEY MUST BE 16 OR 24 OR 32 BYTES!")
+         print('--------------------------------------------------\n')
     IV=String_Generation.randomString() #generat vector IV
   
     plain=camellia_tool.encrypt(str(plain),16,Key,IV)
     public_key=Data_Controller.GetPublicKey(Email)
-    plain=dds_tools.encrypt_dds(public_key,plain)
+    plain=dss_tools.encrypt_dss(public_key,plain)
     Data_Controller.sentmails(sourceMail,Email,plain,IV)#(email_sender,email_receiver,key,mail_txt,iv):
 
 

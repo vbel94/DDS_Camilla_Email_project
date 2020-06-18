@@ -27,7 +27,10 @@ def generate_key():
 		if (cryptomath.gcd(e,phi_n)==1):
 			break
 	d = cryptomath.findModInverse(e,phi_n)
-	public_key = (n,e)
-	private_key = (n,d)
+	public_key = str(n)+", "+str(e)
+	private_key = str(n)+", "+str(d)
 	
 	return (public_key,private_key)
+
+
+#test

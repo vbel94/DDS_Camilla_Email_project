@@ -1,21 +1,4 @@
 {
   "data": [
-    {
-      "public_key": "24503, 241",
-      "private_key": "24503, 20257",
-      "email_received": [],
-      "id": 1,
-      "password": "vladi",
-      "email": "vladi"
-    },
-    {
-      "public_key": "12599, 227",
-      "private_key": "12599, 10211",
-      "email_received": [
-      ],
-      "id": 2,
-      "password": "vladi2",
-      "email": "vladi2"
-    }
   ]
 }

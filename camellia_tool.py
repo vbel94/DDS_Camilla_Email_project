@@ -29,17 +29,21 @@ def decrypt(text,n,key,iv):
     finalText=finalText+text[i].decode(encoding='latin1')
   word = finalText.split("#camelliaVladiDanaIdo")
   finalText=word[0]
-  return finalText
+  if(len(word)==2):
+    return finalText
+  else:
+    None
+
 
       
     
     
      
 
-
-# thislist=encrypt("dsssssssssssssssrrrrrrrrrrrrrrr#",16,'16 byte long key')
-#Data_Controller.sentmails("vladi","vladi",'16 byte long key',str(thislist))
-#decrypt(mails,16,'16 byte long key')
+#----test----
+#thislist=encrypt("dsssssssssssssssrrrrrrrrrrrrrrr#",16,'16 byte longs keyvvvvvvvv','16 byte long key')
+#dec=decrypt(thislist,16,'16 byte long key16 byte long key','16 byte long key')
+#print(dec)
 #mails=Data_Controller.getmails("vladi")
 
 #mails=mails[0]['mail_txt']
