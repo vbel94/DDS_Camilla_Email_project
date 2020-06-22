@@ -1,4 +1,1 @@
-{
-  "data": [
-  ]
-}
+{"data": [{"public_key": "146771, 169", "private_key": "146771, 139945", "email_received": [], "id": 1, "password": "alice", "email": "alice@braude.com"}, {"public_key": "19307, 163", "private_key": "19307, 11659", "email_received": [{"mail_txt": "b:T\u00a2\u00a4b\u008b\u001c\u00c2\u00cc\u00800\u00e6B\u0005\u0016\n\u00e0F\u00aa\u00d1\"-\u0011\u0085*\u0000\u0017\u00ae\u000f%S\u00e9\nkV\u009bp{^;\u00d1\u0083\u00f0\u00ec\u00ba\u0003\u00d5\u0086\u0005\n&\u17e0\u09a6\u1f4b\u1f4b\u01a6\u09a6\u49f7\u17e0\u1f4b\u09a6\u1d50\u33ba\u336d\u1c72\u009a\u14bc\u49f7\u40ef\u1d50\u01a6\u3c9b\u33ba\u009a\u14bc\u40ef\u009a\u009a\u336d\u1d50\u336d\u1f4b\u3e54\u49f7\u40ef\u3fc8\u1f4b\u1d50\u14bc\u49f7\u17e0\u33ba\u009a\u01a6\u3fc8\u33ba\u3c9b\u336d\u1f4b\u3c9b\u40ef\u1c72\u3c9b\u33ba\u33ba\u1c72\u09a6", "from": "alice@braude.com", "iv": "iClkH\\eSD/\"\u000b'Sbn"}], "id": 2, "password": "bob", "email": "bob@braude.com"}]}
